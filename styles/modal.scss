@@ -1,0 +1,134 @@
+$modal-header-h: 40px;
+
+.modal-wrap {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  // bottom: 0;
+  // right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  width: 800px;
+  background-color: #f7f9fa;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.5);
+
+  &-tray {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    &__item {
+      cursor: pointer;
+      color: #fff;
+      background-color: #2f4050;
+      padding: 4px 6px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 3px 3px 0 0;
+      &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &.minimized {
+    display: none;
+  }
+
+  &.maximized {
+    width: 100%;
+    height: 100%;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 0;
+
+    .modal-header {
+      cursor: auto;
+    }
+  }
+
+  &-header {
+    background-color: #2f4050;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 2px solid #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: $modal-header-h;
+    cursor: all-scroll;
+
+    &__title {
+      font-size: 1.2rem;
+      color: #fff;
+      cursor: auto;
+    }
+    &__buttons {
+      display: flex;
+      gap: 10px;
+    }
+    &__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: transparent;
+      transition: background-color 0.2s ease-in-out;
+      &:hover {
+        background-color: #395772;
+      }
+      svg {
+        fill: #fff;
+        stroke: #fff;
+      }
+    }
+
+  }
+
+  &-content {
+    width: 100%;
+    height: calc(100% - #{$modal-header-h});
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  &-sections {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  &-section {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    padding: 10px;
+  }
+
+  &-footer {
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+}

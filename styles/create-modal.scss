@@ -1,0 +1,206 @@
+.page {
+  padding: 0 10px;
+}
+
+.cr {
+  width: 100%;
+  display: flex;
+  &-block {
+    padding: 10px;
+    &__title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  }
+  &-result {
+    padding: 0 10px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cr-modal {
+    background-color: #f7f9fa;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: .5);
+    position: relative;
+
+    &-header {
+      background-color: #2f4050;
+      border-radius: 3px 3px 0 0;
+      border-bottom: 2px solid #3498db;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      height: 40px;
+
+      .cr-edit-title {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        outline: none;
+        width: 100%;
+      }
+
+      &__title {
+        font-size: 1.2rem;
+        color: #fff;
+        user-select: none;
+        width: 50%;
+      }
+      &__close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 3px;
+        background-color: transparent;
+        transition: background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: #395772;
+        }
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    &-content {
+      width: 100%;
+      min-height: 300px;
+      padding: 10px;
+      display: flex;
+      flex-flow: column;
+    }
+
+    &-body {
+      width: 100%;
+      height: 100%;
+      flex: 1 1 auto;
+      display: flex;
+    }
+
+    &-sections {
+      width: 100%;
+      display: flex;
+      gap: 10px;
+      flex: 1 1 auto;
+    }
+
+    &-section {
+      width: 100%;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid #aaa;
+      padding: 10px;
+      position: relative;
+      min-height: 50px;
+      flex: 0 1 auto;
+
+      &:hover {
+        .cr-delete-section {
+          display: flex;
+        }
+        .cr-id-section {
+          display: block;
+        }
+      }
+      .cr-delete-section {
+        display: none;
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: #c44040;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        right: -10px;
+        top: -10px;
+        svg {
+          fill: #fff;
+        }
+      }
+
+      .cr-id-section {
+        display: none;
+        position: absolute;
+        font-size: 0.8rem;
+        color: #aaa;
+        right: 10px;
+        bottom: 10px;
+        &::before {
+          content: "# ";
+          font-style: italic;
+          font-weight: bold;
+        }
+      }
+    }
+
+  }
+}
+
+.cr-options {
+  width: 20%;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .cr-opt {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 26px;
+
+      &__title {
+
+      }
+      &__input {
+        height: 26px;
+        border: 1px solid #aaa;
+        outline: none;
+        border-radius: 3px;
+        padding: 0 6px;
+        &[type="number"] {
+          width: 80px;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.cr-elements {
+  width: 20%;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    .cr-el {
+      width: 100%;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: grab;
+      user-select: none;
+      background-color: antiquewhite;
+      transition: background-color .1s ease;
+      &:hover {
+        background-color: rgb(223, 203, 177);
+      }
+    }
+  }
+}
